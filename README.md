@@ -1,58 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SI-SDM — Sistem Informasi Sumber Daya Manusia
+### Balai Unit Pelaksana Teknis (UPT) Asrama Haji Terpadu — Ekosistem SI-AH 1447H
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SI-SDM adalah modul pengelolaan sumber daya manusia dalam ekosistem **SI-AH Terpadu (Sistem Informasi Asrama Haji Terpadu)**. Sistem ini menjadi pusat data kepegawaian (*single source of truth*) yang mengelola seluruh siklus hidup pegawai, formasi jabatan, struktur organisasi, presensi operasional, permohonan cuti, matriks kompetensi, sertifikasi profesi, dan evaluasi kinerja pegawai.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Backend**: Laravel 13 (PHP 8.4)
+- **Database**: MySQL 8.0
+- **Frontend**: Blade Templating + Tailwind CSS 4 + Alpine.js + Chart.js + Lucide Icons
+- **Testing**: PHPUnit (100% Passed)
+- **Code Standards**: Laravel Pint (PSR-12)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🌟 Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Dashboard Eksekutif SDM**:
+   - Statistik live pegawai (ASN, PPPK, Kontrak, Outsourcing).
+   - Distribusi penempatan per unit kerja & status kehadiran harian.
+   - Quick action persetujuan permohonan cuti & izin.
+   - Leaderboard 5 pegawai berkinerja terbaik.
+   - Real-time audit trail log aktivitas sistem.
+2. **Direktori & Profil Detail Pegawai**:
+   - Pencarian real-time, filter unit kerja, jenis kepegawaian, dan model kerja (WFO/Hybrid/Shift).
+   - Profil terstruktur dengan 4 circular ring gauge kuota cuti.
+   - Grafik akumulasi jam kerja (*hours logged*) dan tren evaluasi performa.
+   - Riwayat mutasi, promosi, dan penempatan (*employee assignments*).
+3. **Struktur Organisasi & Master Jabatan**:
+   - Bagan hierarki interaktif visual unit kerja.
+   - Master Unit Kerja (CRUD lengkap dengan modal interaktif).
+   - Master Jabatan (CRUD lengkap dengan tingkat/level jabatan).
+4. **Presensi & Jam Kerja Operasional**:
+   - Rekap absensi harian, filter tanggal & status (Hadir, Terlambat, DL, Izin, Sakit).
+   - Modal pencatatan presensi manual dan koreksi dispensasi.
+5. **Manajemen Cuti & Izin**:
+   - Pengajuan cuti terintegrasi dengan pemotongan sisa kuota otomatis.
+   - Modal alur persetujuan (*approval*) dengan catatan atasan.
+   - Modal penolakan (*rejection*) dengan pencatatan alasan resmi.
+6. **Matriks Kompetensi & Sertifikasi**:
+   - Standar kamus kompetensi kerja asrama haji.
+   - Pemetaan level kemahiran pegawai (Dasar, Menengah, Mahir).
+   - Manajemen sertifikasi profesi tervalidasi (BNSP, K3, LKPP).
+7. **Penilaian Kinerja (IKP)**:
+   - Evaluasi berkala dengan kalkulasi otomatis predikat kinerja (Sangat Baik, Baik, Cukup, Kurang).
+   - Distribusi kategori capaian dan masukan evaluator.
+8. **Repositori Dokumen Digital**:
+   - Pengarsipan berkas SK Pengangkatan, Surat Tugas, Kontrak, KTP, dan Ijazah.
+   - Simulasi unduh dokumen aman dengan jejak audit log.
+9. **Laporan & Cetak Lembar Resmi**:
+   - Ringkasan eksekutif dan lembar status kesiapan SDM ber-Kop Kementerian Agama RI lengkap dengan blok tanda tangan Kepala Balai.
+10. **Sistem Peran & Akses Cepat (Demo Switcher)**:
+    - 4 Role: `Super Admin`, `Admin SDM`, `Pimpinan (Kepala UPT)`, `Pegawai (Self Service)`.
+    - Fitur 1-klik switcher peran pada Topbar dan Login.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 📦 Panduan Instalasi Lokal
 
-## Agentic Development
+1. **Clone repositori**:
+   ```bash
+   git clone https://github.com/PT-Integrasi-Solusi-Teknologi/SI-SDM.git
+   cd SI-SDM
+   ```
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+2. **Pasang dependensi PHP & Node.js**:
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Konfigurasi Environment**:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   Pastikan pengaturan koneksi basis data MySQL di file `.env` sudah sesuai:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=si_sdm
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+4. **Migrasi Database & Seeding Dummy Data (51 Pegawai)**:
+   ```bash
+   php artisan migrate --seed
+   ```
+
+5. **Build Aset Frontend**:
+   ```bash
+   npm run build
+   ```
+
+6. **Jalankan Aplikasi**:
+   ```bash
+   php artisan serve
+   ```
+   Buka di peramban: `http://localhost:8000`
+
+---
+
+## 🔑 Akun Demo Pengujian
+
+Semua akun menggunakan kata sandi bawaan: `password`
+
+| Peran | Email | Keterangan |
+|---|---|---|
+| **Admin SDM** | `sdm@asramahaji.go.id` | Akses penuh operasional kepegawaian |
+| **Kepala UPT (Pimpinan)** | `kepala@asramahaji.go.id` | Akses eksekutif, rekapitulasi & persetujuan |
+| **Pegawai (Self Service)** | `siti.nurhaliza@asramahaji.go.id` | Akses mandiri pegawai (Mia Torres) |
+| **Super Admin** | `admin@asramahaji.go.id` | Pengaturan sistem & manajemen pengguna |
+
+---
+
+## 🧪 Menjalankan Pengujian (Testing)
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+php artisan test
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+&copy; 2026 Balai Unit Pelaksana Teknis (UPT) Asrama Haji Terpadu &bull; Kementerian Agama Republik Indonesia
